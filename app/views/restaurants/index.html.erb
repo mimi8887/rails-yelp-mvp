@@ -1,0 +1,10 @@
+
+<h1 class="my-3">Restaurants</h1>
+
+ <% @restaurants.each do |restaurant| %>
+  <p class="mt-5">
+  <%= link_to restaurant.name, restaurant %>
+  </p>
+ <% end %>
+
+<%= link_to 'Add a new Restaurant', new_restaurant_path %>

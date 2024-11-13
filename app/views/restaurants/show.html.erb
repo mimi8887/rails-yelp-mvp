@@ -1,0 +1,35 @@
+<h1><%= @restaurant.name %></h1>
+
+  <p class="mt-4">
+    <strong>Address:</strong>
+    <%= @restaurant.address %>
+  </p>
+
+  <p>
+    <strong>Call:</strong>
+    <%= @restaurant.phone_number %>
+  </p>
+
+  <p>
+    <strong>category:</strong>
+    <%= @restaurant.category.capitalize %>
+  </p>
+
+  <p>
+    <strong>reviews:</strong>
+    <ul>
+    <% @restaurant.reviews.each do |review| %>
+    <li><p>Rating :<%= review.rating %></p>
+    <p>Review: <%= review.content %></p>
+    </li>
+    <% end %>
+    </ul>
+  </p>
+
+
+
+<%= link_to 'Back to restaurant', restaurants_path %>
+
+<P class="mt-5">Add a review for <%= @restaurant.name %>:</P>
+
+<%= render "restaurants/form", restaurant: @restaurant, review: @review %>
